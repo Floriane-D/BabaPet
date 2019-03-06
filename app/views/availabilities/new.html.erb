@@ -1,0 +1,6 @@
+<%= simple_form_for [@user, @availability] do |f| %>
+  <%= f.input :start_date %>
+  <%= f.input :end_date %>
+  <%= f.input :price %>
+  <%= f.submit "Add an availability", class: "btn btn-primary" %>
+<% end %>
