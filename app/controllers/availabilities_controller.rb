@@ -1,19 +1,21 @@
 class AvailabilitiesController < ApplicationController
   skip_before_action :authenticate_user!, only: [:index, :show]
   def index
-    @availabilities = Availability.all
+    @availabilities = current_user.availabilities
   end
 
   def new
-    # we need @user in our `simple_form_for`
-    @user = User.find(params[:user_id])
     @availability = Availability.new
   end
 
   def create
     @availability = Availability.new(availability_params)
-    @availability.user = User.find(params[:user_id])
-    @availability.save
+    @availability.user = current_user
+    if @availability.save
+      redirect_to root_path #CHANGE THIS IN THE FUTURE!
+    else
+      render :new
+    end
     redirect_to availability_path(@availability.user)
   end
 
