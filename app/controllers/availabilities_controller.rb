@@ -12,11 +12,10 @@ class AvailabilitiesController < ApplicationController
     @availability = Availability.new(availability_params)
     @availability.user = current_user
     if @availability.save
-      redirect_to root_path #CHANGE THIS IN THE FUTURE!
+      redirect_to root_path # CHANGE THIS IN THE FUTURE!
     else
       render :new
     end
-    redirect_to availability_path(@availability.user)
   end
 
   def show
