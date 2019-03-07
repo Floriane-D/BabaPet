@@ -20,6 +20,7 @@ class AvailabilitiesController < ApplicationController
 
   def show
     @availability = Availability.find(params[:id])
+    @user = @availability.user
   end
 
   private
@@ -28,4 +29,3 @@ class AvailabilitiesController < ApplicationController
     params.require(:availability).permit(:start_date, :end_date, :price)
   end
 end
-
