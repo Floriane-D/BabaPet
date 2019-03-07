@@ -1,0 +1,59 @@
+.availability-card {
+  height: 255px;
+  text-shadow: 0 1px 3px rgba(0,0,0,0.6);
+  background-size: cover !important;
+  background-position: center;
+  color: white;
+  position: relative;
+  margin-bottom: 20px;
+  margin-top: 20px;
+}
+.availability-card-user {
+  position: absolute;
+  right: 10px;
+  top: 10px;
+  width: 40px;
+  border-radius: 50%;
+}
+.availability-card-pricing {
+  position: absolute;
+  bottom: 10px;
+  right: 20px;
+  font-size: 21px;
+}
+.availability-card-description {
+  position: absolute;
+  bottom: 10px;
+  left: 10px;
+}
+.availability-card-description h2 {
+  font-size: 24px;
+}
+.availability-card-description p {
+  font-size: 14px;
+  opacity: 0.7;
+  font-weight: lighter;
+}
+.availability-card-link {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  width: 100%;
+  z-index: 2;
+  background: black;
+  opacity: 0;
+}
+.availability-card-link:hover {
+  opacity: 0.1;
+}
+
+.availability-card-user-avatar > img {
+  position: absolute;
+  right: 16px;
+  top: -20px;
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  border: 2px solid white;
+}

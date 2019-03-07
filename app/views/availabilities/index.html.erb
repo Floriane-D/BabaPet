@@ -1,0 +1,11 @@
+<h3>Pet Sitters available:</h3>
+
+<div class="container">
+  <div class="row">
+    <% @availabilities.each do |availability| %>
+      <div class="col-xs-12 col-sm-4">
+      <%= render 'availability-card', availability: availability %>
+      </div>
+    <% end %>
+  </div>
+</div>
