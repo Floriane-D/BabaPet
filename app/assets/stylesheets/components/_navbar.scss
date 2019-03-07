@@ -11,11 +11,16 @@
 }
 
 /* Logo */
-.navbar-brand img {
+.navbar-wagon-brand img {
   height: 50px;
+  border-radius: 5%;
 }
 
 /* User Avatar */
+.navbar-wagon img {
+  max-width: 100%;
+}
+
 .navbar-wagon .avatar {
   height: 35px;
   width: 35px;
