@@ -5,4 +5,6 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
   has_many :availabilities
   has_many :bookings, through: :availabilities
+  mount_uploader :avatar, AvatarUploader
+  mount_uploader :location, LocationUploader
 end
