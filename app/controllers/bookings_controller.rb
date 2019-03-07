@@ -5,7 +5,6 @@ class BookingsController < ApplicationController
 
   def new
     @booking = Booking.new
-    @user = current_user
     @availability = Availability.find(params[:availability_id])
   end
 
@@ -13,8 +12,7 @@ class BookingsController < ApplicationController
     @booking = Booking.new(booking_params)
     @availability = Availability.find(params[:availability_id])
     @booking.availability = @availability
-    @user = current_user
-    @booking.user = @user
+    @booking.user = current_user
     if @booking.save
       redirect_to root_path #CHANGE THIS IN THE FUTURE!
     else
