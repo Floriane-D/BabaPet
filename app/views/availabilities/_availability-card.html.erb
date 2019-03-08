@@ -5,5 +5,5 @@
     <p><%= availability.user.description %></p>
   </div>
   <div class="availability-card-user-avatar"><%= cl_image_tag availability.user.avatar %></div>
-  <a class="availability-card-link" href="#" ></a>
+  <div class="availability-card-button"><%= link_to "More details", availability_path(availability), class: "btn btn-success btn-sm" %></div>
 </div>
