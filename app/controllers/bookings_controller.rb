@@ -1,6 +1,8 @@
 class BookingsController < ApplicationController
   def index
     @bookings = current_user.bookings
+    @user = current_user
+    @availabilities = current_user.availabilities
   end
 
   def new
@@ -14,7 +16,7 @@ class BookingsController < ApplicationController
     @booking.availability = @availability
     @booking.user = current_user
     if @booking.save
-      redirect_to root_path #CHANGE THIS IN THE FUTURE!
+      redirect_to availability_bookings_path(@availability)
     else
       render :new
     end

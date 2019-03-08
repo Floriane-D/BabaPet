@@ -1,9 +1,33 @@
-<h1>My Bookings</h1>
+<h1><%= @user.name %></h1>
+<h2>My Details</h2>
 <ul>
-
+  <p>Address: <%= @user.address %></p>
+  <p>E-mail: <%= @user.email %></p>
+  <p>Phone Number: <%= @user.phone_number %></p>
+  <p>Description: <%= @user.description %></p>
 </ul>
-<% @bookings.each do |booking| %>
-  <%= booking.user %>
-  <br>
-<% end %>
-</div>
+<br>
+<h2>My Bookings</h2>
+<br>
+<ul>
+  <% @bookings.each do |booking| %>
+    <p>Booked with: <%= booking.user.name %></p>
+    <p>From: <%= booking.start_date %></p>
+    <p>To: <%= booking.end_date %></p>
+    <p>Price: <%= booking.price %></p>
+    <br>
+  <% end %>
+</ul>
+<h2>My Availabilities</h2>
+<br>
+<ul>
+  <% @availabilities.each do |availability| %>
+    <p>From: <%= availability.start_date %></p>
+    <p>To: <%= availability.end_date %></p>
+    <p>Price Per Day: <%= availability.price %></p>
+    <br>
+  <% end %>
+</ul>
+<%= link_to "Add New Availability", new_availability_path, class: "btn btn-primary btn-lg" %>
+<br>
+<%= link_to "Homepage", root_path, class: "btn btn-primary" %>
