@@ -10,25 +10,11 @@
     <%#= stylesheet_pack_tag 'application', media: 'all' %> <!-- Uncomment if you import CSS in app/javascript/packs/application.js -->
   </head>
   <body>
-    <div class="container">
-      <div class="row">
-        <div class="col-sm-4">
-    <!--       One of three columns -->
-        </div>
-        <div class="col-sm-4">
-          <%= render 'shared/navbar' %>
-          <%= render 'shared/flashes' %>
-          <%= yield %>
-          <%= javascript_include_tag 'application' %>
-          <%= javascript_pack_tag 'application' %>
-          <%= render 'shared/footer' %>
-        </div>
-        <div class="col-sm-4">
-          <!-- One of three columns -->
-        </div>
-      </div>
-    </div>
-
-
+    <%= render 'shared/navbar' %>
+    <%= render 'shared/flashes' %>
+    <%= yield %>
+    <%= javascript_include_tag 'application' %>
+    <%= javascript_pack_tag 'application' %>
+    <%= render 'shared/footer' %>
   </body>
 </html>
