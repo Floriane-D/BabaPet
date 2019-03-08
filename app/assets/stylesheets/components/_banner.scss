@@ -1,0 +1,54 @@
+.banner-large {
+  background-size: cover;
+  background-position: center;
+  height: 85vh;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.banner-large h1 {
+  margin: 0;
+  color: white;
+  text-shadow: 1px 1px 10px gray;
+  font-size: 32px;
+  font-weight: bold;
+  text-align: center;
+}
+
+.banner-large p {
+  font-size: 20px;
+  color: white;
+  opacity: .8;
+  text-shadow: 1px 1px 10px gray;
+  text-align: center;
+}
+
+.banner-small {
+  background-size: cover;
+  background-position: center;
+  height: 30vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.banner-small h1 {
+  margin: 0;
+  color: white;
+  text-shadow: 1px 1px 10px gray;
+  font-size: 32px;
+  font-weight: bold;
+  text-align: center;
+}
+
+.banner-small p {
+  font-size: 20px;
+  color: white;
+  opacity: .9;
+  text-shadow: 1px 1px 10px gray;
+  text-align: center;
+}
+
+
