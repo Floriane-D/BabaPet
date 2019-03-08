@@ -1,8 +1,22 @@
-.banner-2 {
+
+@media(max-width: 900px) {
+  .banner-2 {
   // background-size: cover;
   background-position: center;
-  padding: 50px 0;
-  // height: 150px;
+  height: 200px;
+  // display: flex;
+  // justify-content: space-around;
+  align-items: center;
+  }
+}
+
+.banner-2 {
+  background-size: cover;
+  background-position: center;
+  height: 100vh;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
 }
 
 .banner-2 h1 {
@@ -19,5 +33,6 @@
   color: white;
   opacity: .7;
   text-shadow: 1px 1px 10px gray;
+  text-align: center;
 }
 
