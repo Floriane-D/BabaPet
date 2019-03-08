@@ -1,16 +1,18 @@
-<!-- <div class="container">
-  <div class="row">
-    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
- -->
-      <div class="banner-2" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url('<%= image_path "banner.jpg" %>');">
-        <!-- <div class="container"> -->
-          <h1>BabaPet</h1>
-          <p>Find someone to take care of your pet</p>
-        <!-- </div> -->
 
-      <br>
-      <p style="font-weight: 900; font-size: 20px; text-align: center">When and where do you need your BabaPet?</p>
+<!-- Big screen -->
+<div class="hidden-xs">
 
+  <div class="banner-large" style="background-image: url('<%= image_path "banner.jpg" %>');">
+
+    <div class="container row">
+
+      <div class="col-sm-5">
+        <h1>BabaPet</h1>
+        <br>
+        <p>Find someone to take care of your pet</p>
+        <br>
+
+        <p style="font-weight: 900; color: black;font-size: 20px; text-align: center">When and where do you need your BabaPet?</p>
         <%= simple_form_for(:search, url: availabilities_path, method: :get) do |f| %>
 
           <%= f.input :start_date, input_html: { type: :date } %>
@@ -21,21 +23,65 @@
           <%= f.submit class: 'btn btn-primary', value: "Search" %>
           </div>
         <% end %>
-      <br>
-
       </div>
 
-<!--     </div>
+      <div class="col-sm-7">
+      </div>
+
+    </div>
+
   </div>
+
 </div>
- -->
-<!-- <div class="container">
-  <div class="row">
-    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
- -->
 
 
-<!--     </div>
+
+<!-- Mobile only -->
+<div class="visible-xs">
+
+  <div class="banner-small" style="background-image: url('<%= image_path "lion.jpg" %>');">
+    <h1>BabaPet</h1>
+    <br>
+    <p>Find someone to take care of your pet</p>
   </div>
+
+  <div>
+
+    <div class="container row">
+
+      <div class="col-sm-5">
+
+        <br>
+
+        <p style="font-weight: 900; color: black;font-size: 20px; text-align: center">When and where do you need your BabaPet?</p>
+        <%= simple_form_for(:search, url: availabilities_path, method: :get) do |f| %>
+
+          <%= f.input :start_date, input_html: { type: :date } %>
+          <%= f.input :end_date, input_html: { type: :date } %>
+          <%= f.input :address %>
+
+          <div style="text-align: center">
+          <%= f.submit class: 'btn btn-primary', value: "Search" %>
+          </div>
+        <% end %>
+      </div>
+
+      <div class="col-sm-7">
+      </div>
+
+    </div>
+
+  </div>
+
+
 </div>
- -->
+
+
+
+
+
+
+
+
+
+
