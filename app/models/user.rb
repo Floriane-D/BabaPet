@@ -7,4 +7,6 @@ class User < ApplicationRecord
   has_many :bookings, through: :availabilities
   mount_uploader :avatar, AvatarUploader
   mount_uploader :location, LocationUploader
+  geocoded_by :address
+  after_validation :geocode, if: :will_save_change_to_address?
 end
