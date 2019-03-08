@@ -1,7 +1,7 @@
 class AvailabilitiesController < ApplicationController
   skip_before_action :authenticate_user!, only: [:index, :show]
   def index
-    @availabilities = current_user.availabilities
+    @availabilities = Availability.all
   end
 
   def new
