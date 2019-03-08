@@ -2,25 +2,27 @@
   <div class="title text-center">
     <h1>PetSitter</h1>
   </div>
-  <div class="img-box text-center">
-    <%= cl_image_tag @user.avatar, class: "avatar-lg" %>
-    <%= cl_image_tag @user.location, class: "location" %>
-  </div>
+  <div class="container-box">
+    <div class="img-box text-center">
+      <%= cl_image_tag @user.avatar, class: "avatar-lg" %>
+      <%= cl_image_tag @user.location, class: "location" %>
+    </div>
 
-  <div class="info-box text-center">
-    <h2><%= @user.name %></h2>
-    <div class="personal-info">
-      <p>Address: <%= @user.address %></p>
-      <p>E-mail: <%= @user.email %></p>
-      <p>Phone Number: <%= @user.phone_number %></p>
-    </div>
-    <div class="description-info">
-      <p><strong><%= @user.description %></strong></p>
-    </div>
-    <div class="availability-info">
-      <p>Price Per Day: <%= @availability.price %></p>
-      <p>Available From: <%= @availability.start_date %></p>
-      <p>To: <%= @availability.end_date %></p>
+    <div class="info-box text-center">
+      <h2><%= @user.name %></h2>
+      <div class="personal-info">
+        <p>Address: <%= @user.address %></p>
+        <p>E-mail: <%= @user.email %></p>
+        <p>Phone Number: <%= @user.phone_number %></p>
+      </div>
+      <div class="description-info">
+        <p><strong><%= @user.description %></strong></p>
+      </div>
+      <div class="availability-info">
+        <p>Price Per Day: <%= @availability.price %></p>
+        <p>Available From: <%= @availability.start_date %></p>
+        <p>To: <%= @availability.end_date %></p>
+      </div>
     </div>
   </div>
   <div class="text-center">
