@@ -13,6 +13,8 @@ class AvailabilitiesController < ApplicationController
 
   def new
     @availability = Availability.new
+    @availabilities = Availability.all
+    @availability_array = [:start_date.. :end_date]
   end
 
   def create

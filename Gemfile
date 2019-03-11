@@ -21,6 +21,12 @@ gem 'webpacker'
 gem 'devise'
 gem "geocoder"
 gem 'faker'
+gem "simple_calendar", "~> 2.0"
+gem 'daterangepicker-rails'
+gem 'jquery-rails' # dependency of daterangepicker
+gem 'momentjs-rails' # dependency of daterangepicker
+gem 'bootstrap-daterangepicker-rails'
+
 
 group :development do
   gem 'web-console', '>= 3.3.0'

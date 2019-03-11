@@ -5,13 +5,27 @@
       </div>
       <div class="col-sm-6">
         <%= simple_form_for [@user, @availability] do |f| %>
-          <%= f.input :start_date, as: :date, html5: true %>
-          <%= f.input :end_date, as: :date, html5: true %>
+          <br>
+           <label for="daterange">Pick your availability:</label>
+           <br>
+           <input type="text" name="daterange" value="" showDropdowns= true alwaysShowCalendars= true />
+              <script>
+                $(function() {
+                  $('input[name="daterange"]').daterangepicker({
+                  opens: 'left'
+                  }, function(start, end, label) {
+                  console.log("A new date selection was made: " + start.format('YYYY-MM-DD') + ' to ' + end.format('YYYY-MM-DD'));
+                  });
+                });
+               </script>
+               <br>
+               <br>
           <%= f.input :price %>
           <div style="text-align: center">
           <%= f.submit class: 'btn btn-primary', value: "Add an availability" %>
           </div>
         <% end %>
+
       </div>
       <div class="col-sm-3">
       </div>
@@ -24,8 +38,21 @@
     <div class="row">
       <div class="col-xs-12">
         <%= simple_form_for [@user, @availability] do |f| %>
-          <%= f.input :start_date, as: :date, html5: true %>
-          <%= f.input :end_date, as: :date, html5: true %>
+          <br>
+           <label for="daterange">Pick your availability:</label>
+           <br>
+           <input type="text" name="daterange" value="" />
+              <script>
+                $(function() {
+                  $('input[name="daterange"]').daterangepicker({
+                  opens: 'left'
+                  }, function(start, end, label) {
+                  console.log("A new date selection was made: " + start.format('YYYY-MM-DD') + ' to ' + end.format('YYYY-MM-DD'));
+                  });
+                });
+               </script>
+               <br>
+               <br>
           <%= f.input :price %>
           <div style="text-align: center">
           <%= f.submit class: 'btn btn-primary', value: "Add an availability" %>
@@ -35,6 +62,8 @@
     </div>
   </div>
 </div>
+
+
 
 
 
