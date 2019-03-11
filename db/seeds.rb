@@ -11,32 +11,25 @@ require 'faker'
 4.times do
   user=User.new(
     email: Faker::Internet.email,
-    password: Faker::Internet.password(8),
+    password: "12345678",
     name: Faker::Name.name,
     description: ["
 My host can occupy all the spaces of my apartment, the sites made in a place with many trees and quiet that is in the street of the apartment, very close. They will have jokes to have fun and much attention and affection. I live alone and have to make all the weekend time available for my host.","My pet loves new friends! It's very playful! is a guaranteed treat for the hospet, which you can stroll through the entire stay! The area is very good for dogs, wide and flat sidewalks. From the side of the park, you have a ride for all hours. Always with the tutor-oriented frequency, and of course, never in the sun so as not to burn the paws."].sample,
     phone_number: "021 97474-7754",
     remote_avatar_url: "http://i.pravatar.cc/300", #"https://source.unsplash.com/300x300/?face",
     remote_location_url: ["http://kingdomlandscapes.com/images/uploads/gallery/20150205_113031.jpg", "https://www.rentfast.ca/rfc/listing_photos/6/7/4/9/1909476.v.6e924532cfc90b95d562551149f3ff28.jpg", "https://www.victorslandscaping.net/wp-content/uploads/2015/09/Clarendon4.jpeg", "https://ehq-production-canada.imgix.net/photos/images/bbba5d257514bc0fbe70accdebc9c5aa68933641/000/006/283/original/WP_20180704_15_24_43_Pro.jpg?auto=compress", "https://i.pinimg.com/originals/8e/e1/b7/8ee1b7f798db175af9ea1b8b9b156b77.jpg", "https://cache.legacy.net/usercontent/guestbook/photos/2017-05/2017-05-09/131838530.jpg", "https://storage.googleapis.com/idx-photos-gs.ihouseprd.com/CA-TULARE/130444/org/000.jpg", "https://1.bp.blogspot.com/-SUffhsmAmRI/V3RxYzn6BZI/AAAAAAAAC6Q/-4a9C1_1bOMf6Ow8uAV9q0VprR3ab79GQCLcB/s1600/20160424_145852.jpg"].sample,
-    address: ["
-R. Visc. de Pirajá, 550 - Ipanema - Rio de Janeiro - RJ, 22410-003
-", "
-R. das Laranjeiras, 540 - Cosme Velho - Rio de Janeiro - RJ, 22241-090
-", "Av. Nossa Sra. de Copacabana, 540 - Copacabana - Rio de Janeiro - RJ, 22050-002
-", "
-Av. Vieira Souto, 460 - Ipanema - Rio de Janeiro - RJ, 22420-006
-", "R. Rodolfo Dantas, 85 - Copacabana - Rio de Janeiro - RJ, 22020-040
-", "
-R. Bom Pastor, 544 - Tijuca - Rio de Janeiro - RJ, 20521-060
-", "R. Moura Brasil, 74 - Laranjeiras - Rio de Janeiro - RJ, 22231-200
-", "
-Ladeira da Glória, 26 - Glória - Rio de Janeiro - RJ, 22211-120
-", "R. Voluntários da Pátria, 190 - Botafogo - Rio de Janeiro - RJ, 22270-010
-", "R. São Clemente, 185 - Botafogo - Rio de Janeiro - RJ, 22250-040
-", "
-R. Bambina, 54 - Botafogo - Rio de Janeiro - RJ, 22251-050
-", "R. Mena Barreto, 161 - Botafogo - Rio de Janeiro - RJ, 22271-100
-"].sample
+    address: ["R. Visc. de Pirajá, 550 - Ipanema - Rio de Janeiro - RJ, 22410-003",
+      "R. das Laranjeiras, 540 - Cosme Velho - Rio de Janeiro - RJ, 22241-090",
+      "Av. Nossa Sra. de Copacabana, 540 - Copacabana - Rio de Janeiro - RJ, 22050-002",
+      "Av. Vieira Souto, 460 - Ipanema - Rio de Janeiro - RJ, 22420-006",
+      "R. Rodolfo Dantas, 85 - Copacabana - Rio de Janeiro - RJ, 22020-040",
+      "R. Bom Pastor, 544 - Tijuca - Rio de Janeiro - RJ, 20521-060",
+      "R. Moura Brasil, 74 - Laranjeiras - Rio de Janeiro - RJ, 22231-200",
+      "Ladeira da Glória, 26 - Glória - Rio de Janeiro - RJ, 22211-120",
+      "R. Voluntários da Pátria, 190 - Botafogo - Rio de Janeiro - RJ, 22270-010",
+      "R. São Clemente, 185 - Botafogo - Rio de Janeiro - RJ, 22250-040",
+      "R. Bambina, 54 - Botafogo - Rio de Janeiro - RJ, 22251-050",
+      "R. Mena Barreto, 161 - Botafogo - Rio de Janeiro - RJ, 22271-100"].sample
   )
   user.save!
 end
