@@ -2,10 +2,19 @@ class AvailabilitiesController < ApplicationController
   skip_before_action :authenticate_user!, only: [:index, :show]
   def index
     @availabilities = Availability.all
+    @markers = @availabilities.map do |availability|
+      {
+        lng: availability.user.longitude,
+        lat: availability.user.latitude,
+        infoWindow: render_to_string(partial: "infowindow", locals: { availability: availability })
+      }
+    end
   end
 
   def new
     @availability = Availability.new
+    @availabilities = Availability.all
+    @availability_array = [:start_date.. :end_date]
   end
 
   def create
