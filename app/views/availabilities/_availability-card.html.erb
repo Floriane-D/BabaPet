@@ -1,8 +1,7 @@
-<div class="availability-card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= cl_image_path availability.user.location, height: 300, width: 400, crop: :fill %>');">
-  <h2 class="availability-card-pricing"><%= availability.price %></h2>
+<div class="availability-card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= cl_image_path availability.user.location, height: 300, width: 400, crop: :fill, gravity: :face %>');">
+  <h2 class="availability-card-pricing">$ <%= availability.price %></h2>
   <div class="availability-card-description">
     <h2><%= availability.user.name %></h2>
-    <p><%= availability.user.description %></p>
   </div>
   <div class="availability-card-user-avatar"><%= cl_image_tag availability.user.avatar %></div>
   <div class="availability-card-button"><%= link_to "More details", availability_path(availability), class: "btn btn-success btn-sm" %></div>
