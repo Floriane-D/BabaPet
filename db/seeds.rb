@@ -8,12 +8,13 @@ require 'faker'
 #   Character.create(name: 'Luke', movie: movies.first)
 
 
-20.times do
+10.times do
   user=User.new(
     email: Faker::Internet.email,
     password: Faker::Internet.password(8),
     name: Faker::Name.name,
-    description: ["hate pets","love tarantulas", "looking for someone to pet mejhdfksdfhsjdhfkjshdkjfhskd lsdjflksdh slkdhfklsdfjkl"].sample,
+    description: ["
+My host can occupy all the spaces of my apartment, the sites made in a place with many trees and quiet that is in the street of the apartment, very close. They will have jokes to have fun and much attention and affection. I live alone and have to make all the weekend time available for my host.","My pet loves new friends! It's very playful! is a guaranteed treat for the hospet, which you can stroll through the entire stay! The area is very good for dogs, wide and flat sidewalks. From the side of the park, you have a ride for all hours. Always with the tutor-oriented frequency, and of course, never in the sun so as not to burn the paws."].sample,
     phone_number: "021 97474-7754",
     remote_avatar_url: "https://source.unsplash.com/300x300/?face",
     remote_location_url: "https://source.unsplash.com/900x1700/?home,outdoor",
@@ -22,7 +23,7 @@ require 'faker'
   user.save!
 end
 
-200.times do
+20.times do
   availability = Availability.new(
     start_date:    Faker::Date.between(Date.today + 2.days, Date.today+5.days),
     end_date:  Faker::Date.between(Date.today + 5.days, Date.today+60.days),
