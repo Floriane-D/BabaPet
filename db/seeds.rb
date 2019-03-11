@@ -7,35 +7,17 @@ require 'faker'
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-User.create!(
-  email: "user@user.com",
-  password: 123456,
-  name: "user",
-  description: "hate pets",
-  phone_number: 1234567890,
-  remote_avatar_url: Faker::Avatar.image,
-  remote_location_url: Faker::Avatar.image
-)
 
-User.create!(
-  email: "user2@user.com",
-  password: 123456,
-  name: "user2",
-  description: "hate pets",
-  phone_number: 1234567890,
-  remote_avatar_url: Faker::Avatar.image,
-  remote_location_url: Faker::Avatar.image
-)
-
-10.times do
+20.times do
   user=User.new(
     email: Faker::Internet.email,
     password: Faker::Internet.password(8),
     name: Faker::Name.name,
     description: ["hate pets","love tarantulas", "looking for a girlfriend to pet me"].sample,
-    phone_number: 1234567890,
+    phone_number: "021 97474-7754",
     remote_avatar_url: Faker::Avatar.image,
-    remote_location_url: Faker::Avatar.image
+    remote_location_url: "https://source.unsplash.com/900x1600/?house,grass",
+    address: Faker::Address.full_address
   )
   user.save!
 end

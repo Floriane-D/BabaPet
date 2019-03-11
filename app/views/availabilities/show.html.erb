@@ -1,44 +1,46 @@
-<div class="show-box">
-  <div class="title text-center">
-    <h1>PetSitter</h1>
-  </div>
-  <div class="container-box">
-    <div class="row">
-      <div class="col-xs-12 col-sm-8">
-        <div class="info-box text-center">
-          <div class="name-info">
-            <%= cl_image_tag @user.avatar, class: "avatar-lg" %>
-            <h2><%= @user.name %></h2>
-          </div>
-          <div class="description-info">
-            <p><strong>More about <%= @user.name %></strong> </p>
-            <p><%= @user.description %></p>
-          </div>
-          <div class="personal-info">
-            <p><i class="fas fa-map-marker-alt"></i> <%= @user.address %></p>
-            <p><i class="fas fa-at"></i>: <%= @user.email %></p>
-            <p id="phone_number"><i class="fas fa-phone"></i>: <%= @user.phone_number %></p>
-          </div>
-          <div class="availability-info">
-            <p>Price Per Day: <%= @availability.price %></p>
-            <p>Available From: <%= @availability.start_date %></p>
-            <p>To: <%= @availability.end_date %></p>
+<div class="container">
+  <div class="show-box">
+    <div class="title text-center">
+      <h1>PetSitter</h1>
+    </div>
+    <div class="container-box">
+      <div class="row">
+        <div class="col-xs-12 col-sm-8">
+          <div class="info-box text-center">
+            <div class="name-info">
+              <%= cl_image_tag(@user.avatar, :height=>300, :width=>300, :crop=>"crop", class: "avatar-lg") %>
+              <h2><%= @user.name %></h2>
+            </div>
+            <div class="description-info">
+              <p><strong>More about <%= @user.name %></strong> </p>
+              <p><%= @user.description %></p>
+            </div>
+            <div class="personal-info">
+              <p><i class="fas fa-map-marker-alt"></i> <%= @user.address %></p>
+              <p><i class="fas fa-at"></i>: <%= @user.email %></p>
+              <p id="phone_number"><i class="fas fa-phone"></i>: <%= @user.phone_number %></p>
+            </div>
+            <div class="availability-info">
+              <p>Price Per Day: <%= @availability.price %></p>
+              <p>Available From: <%= @availability.start_date %></p>
+              <p>To: <%= @availability.end_date %></p>
+            </div>
           </div>
         </div>
-      </div>
-      <div class="col-xs-12 col-sm-4">
-        <div class="img-box text-center">
-          <%= cl_image_tag @user.location, class: "location" %>
+        <div class="col-xs-12 col-sm-4">
+          <div class="img-box text-center">
+            <%= cl_image_tag @user.location, class: "location" %>
+          </div>
         </div>
       </div>
     </div>
-  </div>
-  <div class="text-center">
-    <%= link_to "Book Now", new_availability_booking_path(@availability), class: "btn btn-primary btn-lg" %>
-  </div>
-  <br>
-  <div class="text-center">
-    <%= link_to "Homepage", root_path, class: "btn btn-primary" %>
+    <div class="text-center">
+      <%= link_to "Book Now", new_availability_booking_path(@availability), class: "btn btn-primary btn-lg" %>
+    </div>
+    <br>
+    <div class="text-center">
+      <%= link_to "Homepage", root_path, class: "btn btn-primary" %>
+    </div>
   </div>
 </div>
 
