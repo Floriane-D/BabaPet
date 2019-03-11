@@ -18,16 +18,6 @@
     <br>
   <% end %>
 </ul>
-<h2>My Availabilities</h2>
-<br>
-<ul>
-  <% @availabilities.each do |availability| %>
-    <p>From: <%= availability.start_date %></p>
-    <p>To: <%= availability.end_date %></p>
-    <p>Price Per Day: <%= availability.price %></p>
-    <br>
-  <% end %>
-</ul>
 <%= link_to "Add New Availability", new_availability_path, class: "btn btn-primary btn-lg" %>
 <br>
 <%= link_to "Homepage", root_path, class: "btn btn-primary" %>
