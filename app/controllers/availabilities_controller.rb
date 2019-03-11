@@ -14,7 +14,6 @@ class AvailabilitiesController < ApplicationController
   def new
     @availability = Availability.new
     @availabilities = Availability.all
-
   end
 
   def create
@@ -26,7 +25,7 @@ class AvailabilitiesController < ApplicationController
     @availability.start_date = start_date
     @availability.end_date = end_date
     if @availability.save
-      redirect_to root_path # CHANGE THIS IN THE FUTURE!
+      redirect_to profile_path # CHANGE THIS IN THE FUTURE!
     else
       render :new
     end

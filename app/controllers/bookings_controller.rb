@@ -14,7 +14,7 @@ class BookingsController < ApplicationController
     @booking.availability = @availability
     @booking.user = current_user
     if @booking.save
-      redirect_to availability_bookings_path(@availability)
+      redirect_to profile_path
     else
       render :new
     end
