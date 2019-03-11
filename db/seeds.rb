@@ -8,7 +8,7 @@ require 'faker'
 #   Character.create(name: 'Luke', movie: movies.first)
 
 
-5.times do
+20.times do
   user=User.new(
     email: Faker::Internet.email,
     password: Faker::Internet.password(8),
@@ -16,13 +16,13 @@ require 'faker'
     description: ["hate pets","love tarantulas", "looking for someone to pet mejhdfksdfhsjdhfkjshdkjfhskd lsdjflksdh slkdhfklsdfjkl"].sample,
     phone_number: "021 97474-7754",
     remote_avatar_url: "https://source.unsplash.com/300x300/?face",
-    remote_location_url: "https://source.unsplash.com/900x1700/?house,grass",
+    remote_location_url: "https://source.unsplash.com/900x1700/?home,outdoor",
     address: Faker::Address.full_address
   )
   user.save!
 end
 
-10.times do
+200.times do
   availability = Availability.new(
     start_date:    Faker::Date.between(Date.today + 2.days, Date.today+5.days),
     end_date:  Faker::Date.between(Date.today + 5.days, Date.today+60.days),
