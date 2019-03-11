@@ -17,7 +17,7 @@
 
           <%= f.input :start_date, input_html: { type: :date } %>
           <%= f.input :end_date, input_html: { type: :date } %>
-          <%= f.input :address %>
+          <%= f.input :address, id: 'search_address' %>
 
           <div style="text-align: center">
           <%= f.submit class: 'btn btn-primary', value: "Search" %>
