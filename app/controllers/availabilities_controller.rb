@@ -14,12 +14,17 @@ class AvailabilitiesController < ApplicationController
   def new
     @availability = Availability.new
     @availabilities = Availability.all
-    @availability_array = [:start_date.. :end_date]
+
   end
 
   def create
     @availability = Availability.new(availability_params)
     @availability.user = current_user
+    dates_array = params["daterange"].split(" - ")
+    start_date = Date.strptime(dates_array[0], '%m/%d/%Y')
+    end_date = Date.strptime(dates_array[1], '%m/%d/%Y')
+    @availability.start_date = start_date
+    @availability.end_date = end_date
     if @availability.save
       redirect_to root_path # CHANGE THIS IN THE FUTURE!
     else
