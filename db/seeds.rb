@@ -18,7 +18,25 @@ My host can occupy all the spaces of my apartment, the sites made in a place wit
     phone_number: "021 97474-7754",
     remote_avatar_url: "https://source.unsplash.com/300x300/?face",
     remote_location_url: "https://source.unsplash.com/900x1700/?home,outdoor",
-    address: Faker::Address.full_address
+    address: ["
+R. Visc. de Pirajá, 550 - Ipanema - Rio de Janeiro - RJ, 22410-003
+", "
+R. das Laranjeiras, 540 - Cosme Velho - Rio de Janeiro - RJ, 22241-090
+", "Av. Nossa Sra. de Copacabana, 540 - Copacabana - Rio de Janeiro - RJ, 22050-002
+", "
+Av. Vieira Souto, 460 - Ipanema - Rio de Janeiro - RJ, 22420-006
+", "R. Rodolfo Dantas, 85 - Copacabana - Rio de Janeiro - RJ, 22020-040
+", "
+R. Bom Pastor, 544 - Tijuca - Rio de Janeiro - RJ, 20521-060
+", "R. Moura Brasil, 74 - Laranjeiras - Rio de Janeiro - RJ, 22231-200
+", "
+Ladeira da Glória, 26 - Glória - Rio de Janeiro - RJ, 22211-120
+", "R. Voluntários da Pátria, 190 - Botafogo - Rio de Janeiro - RJ, 22270-010
+", "R. São Clemente, 185 - Botafogo - Rio de Janeiro - RJ, 22250-040
+", "
+R. Bambina, 54 - Botafogo - Rio de Janeiro - RJ, 22251-050
+", "R. Mena Barreto, 161 - Botafogo - Rio de Janeiro - RJ, 22271-100
+"].sample
   )
   user.save!
 end
