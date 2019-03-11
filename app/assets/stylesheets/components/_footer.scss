@@ -2,10 +2,11 @@
   background: #F4F4F4;
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  height: 100px;
-  padding: 0px 50px;
+  justify-content: center;
+  height: 70px;
+  padding: 0px 30px;
   color: rgba(0,0,0,0.3);
+  flex-shrink: 0;
 }
 .footer-links {
   display: flex;
@@ -23,4 +24,7 @@
 }
 .footer .fa-heart {
   color: #D23333;
+}
+.footer-copyright {
+  text-align: center;
 }
