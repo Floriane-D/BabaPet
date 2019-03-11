@@ -1,14 +1,15 @@
 <div class="hidden-xs">
   <div class="container">
     <div class="row">
-      <div class="col-sm-3">
+      <div class="col-sm-4">
       </div>
-      <div class="col-sm-6">
+
+      <div class="col-sm-4">
         <%= simple_form_for [@user, @availability] do |f| %>
           <br>
-           <label for="daterange">Pick your availability:</label>
+           <label for="daterange">Choose your availability:</label>
            <br>
-           <input type="text" name="daterange" value="" showDropdowns= true alwaysShowCalendars= true />
+           <input class="form-control" type="text" name="daterange" value="" />
               <script>
                 $(function() {
                   $('input[name="daterange"]').daterangepicker({
@@ -20,14 +21,14 @@
                </script>
                <br>
                <br>
-          <%= f.input :price %>
+          <%= f.input :price, :label => "Price per day ($):" %>
           <div style="text-align: center">
           <%= f.submit class: 'btn btn-primary', value: "Add an availability" %>
           </div>
         <% end %>
 
       </div>
-      <div class="col-sm-3">
+      <div class="col-sm-4">
       </div>
     </div>
   </div>
@@ -41,7 +42,7 @@
           <br>
            <label for="daterange">Pick your availability:</label>
            <br>
-           <input type="text" name="daterange" value="" />
+           <input class="form-control" type="text" name="daterange" value="" />
               <script>
                 $(function() {
                   $('input[name="daterange"]').daterangepicker({
@@ -53,7 +54,7 @@
                </script>
                <br>
                <br>
-          <%= f.input :price %>
+          <%= f.input :price, :label => "Price per day ($):" %>
           <div style="text-align: center">
           <%= f.submit class: 'btn btn-primary', value: "Add an availability" %>
           </div>
