@@ -6,5 +6,5 @@ Rails.application.routes.draw do
   resources :availabilities, except: [:edit, :update, :destroy] do
     resources :bookings, only: [:new, :create]
   end
-
+  get 'profile', to: 'pages#profile', as: :profile
 end
