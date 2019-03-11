@@ -4,6 +4,12 @@ class PagesController < ApplicationController
   end
 
   def profile
+    @availabilities = current_user.availabilities
+  end
+
+  def index
 
   end
+
+
 end

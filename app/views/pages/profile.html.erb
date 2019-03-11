@@ -1,1 +1,11 @@
 profile.html.erb
+
+<%= month_calendar events: @availabilities do |date, availabilities| %>
+  <%= date %>
+
+  <% availabilities.each do |availability| %>
+    <div class = "has-events">
+      <%=""%>
+    </div>
+  <% end %>
+<% end %>
