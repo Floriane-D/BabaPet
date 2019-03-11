@@ -16,7 +16,7 @@
 
           <label for="daterange">When do you need  Baba?</label>
           <br>
-          <input type="text" name="daterange" value="" showDropdowns= true alwaysShowCalendars= true />
+          <input class="form-control" type="text" name="daterange" value="" />
             <script>
               $(function() {
                 $('input[name="daterange"]').daterangepicker({
@@ -60,15 +60,26 @@
 
     <div class="container row">
 
-      <div class="col-sm-5">
-
+      <div class="col-xs-12">
         <br>
-
         <%= simple_form_for(:search, url: availabilities_path, method: :get) do |f| %>
 
-          <%= f.input :start_date, input_html: { type: :date } %>
-          <%= f.input :end_date, input_html: { type: :date } %>
-          <%= f.input :address %>
+          <label for="daterange">When do you need  Baba?</label>
+          <br>
+          <input class="form-control" type="text" name="daterange" value="" />
+            <script>
+              $(function() {
+                $('input[name="daterange"]').daterangepicker({
+                opens: 'left'
+                }, function(start, end, label) {
+                console.log("A new date selection was made: " + start.format('YYYY-MM-DD') + ' to ' + end.format('YYYY-MM-DD'));
+                });
+              });
+            </script>
+
+            <br>
+            <br>
+          <%= f.input :address, id: 'search_address' %>
 
           <div style="text-align: center">
           <%= f.submit class: 'btn btn-primary', value: "Search" %>
@@ -76,8 +87,8 @@
         <% end %>
       </div>
 
-      <div class="col-sm-7">
-      </div>
+<!--       <div class="col-sm-7">
+      </div> -->
 
     </div>
 
