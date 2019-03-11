@@ -24,6 +24,9 @@
               <p>Price Per Day: <%= @availability.price %></p>
               <p>Available From: <%= @availability.start_date %></p>
               <p>To: <%= @availability.end_date %></p>
+              <%= month_calendar(attribute: :start_date, end_attribute: :end_date) do |date| %>
+                  <%= date %>
+              <% end %>
             </div>
           </div>
         </div>
