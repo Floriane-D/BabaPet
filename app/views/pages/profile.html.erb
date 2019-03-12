@@ -19,25 +19,19 @@
             </div> -->
             <div class="personal-info">
               <h3>My Bookings</h3>
+              <br>
               <%= month_calendar events: @bookings, attribute: :start_date, end_attribute: :end_date do |date, bookings| %>
                 <div><%= date %></div>
                  <% bookings.each do |booking| %>
                      <div class = "has-events">
-                       <%= %>
+                       <%= @bookings.first.availability.user.name %>
                      </div>
                  <% end %>
              <% end %>
-              <% @bookings.each do |booking| %>
-              <br>
-                <p>Booked With: <%= booking.availability.user.name %></p>
-                <p>From: <%= booking.start_date %></p>
-                <p>To: <%= booking.end_date %></p>
-                <p>Total Price: <%= booking.price %></p>
-              <% end %>
             </div>
             <div class="availability-info">
               <h3>My Availabilities</h3>
-
+              <br>
               <%= month_calendar events: @availabilities, attribute: :start_date, end_attribute: :end_date do |date, availabilities| %>
                 <div><%= date %></div>
                  <% availabilities.each do |availability| %>
@@ -46,14 +40,6 @@
                      </div>
                  <% end %>
              <% end %>
-
-              <% @availabilities.each do |availability| %>
-              <br>
-                <p>Available From: <%= availability.start_date %></p>
-                <p>To: <%= availability.end_date %></p>
-                <p>Price Per Day: <%= availability.price %></p>
-              <% end %>
-
             </div>
           </div>
         </div>
