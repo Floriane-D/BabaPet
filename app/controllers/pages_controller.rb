@@ -6,6 +6,6 @@ class PagesController < ApplicationController
   def profile
     @user = current_user
     @availabilities = @user.availabilities
-    @bookings = @user.bookings
+    @bookings = Booking.where(user_id: @user.id)
   end
 end
