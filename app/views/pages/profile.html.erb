@@ -30,15 +30,14 @@
             <div class="availability-info">
               <h3>My Availabilities</h3>
 
-              <%= month_calendar events: @availabilities do |date, availabilities| %>
-                <%= date %>
-
-                <% availabilities.each do |availability| %>
-                  <div class = "has-events">
-                    <%=""%>
-                  </div>
-                <% end %>
-              <% end %>
+              <%= month_calendar events: @availabilities, attribute: :start_date, end_attribute: :end_date do |date, availabilities| %>
+             <div><%= date %></div>
+               <% availabilities.each do |availability| %>
+                   <div class = "has-events">
+                     <%= %>
+                   </div>
+               <% end %>
+             <% end %>
 
               <% @availabilities.each do |availability| %>
               <br>
