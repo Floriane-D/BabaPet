@@ -1,4 +1,4 @@
-<h3>Pet Sitters available:</h3>
+<div class="text-center"><h3>Pet Sitters available:</h3></div>
 
 <div
   id="map"
@@ -8,12 +8,3 @@
   data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"
 ></div>
 
-<div class="container">
-  <div class="row">
-    <% @availabilities.each do |availability| %>
-      <div class="col-xs-12 col-sm-4">
-      <%= render 'availability-card', availability: availability %>
-      </div>
-    <% end %>
-  </div>
-</div>
