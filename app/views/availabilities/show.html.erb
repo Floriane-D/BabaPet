@@ -21,23 +21,16 @@
               <p id="phone_number"><i class="fas fa-phone"></i>: <%= @user.phone_number %></p>
             </div>
             <div class="availability-info">
-              <p>Available From: <%= @availability.start_date %></p>
-              <p>To: <%= @availability.end_date %></p>
-
-              <%= month_calendar(attribute: :start_date, end_attribute: :end_date) do |date| %>
-                  <%= date %>
-              <% end %>
-
-              <p>Price Per Day: <%= @availability.price %></p>
-               <%= month_calendar events: @availabilities, attribute: :start_date, end_attribute: :end_date do |date, availabilities| %>
-                div><%= date %></div>
+            <h3>Available Dates</h3>
+            <br>
+              <%= month_calendar events: @availabilities, attribute: :start_date, end_attribute: :end_date do |date, availabilities| %>
+               <div><%= date %></div>
                  <% availabilities.each do |availability| %>
                      <div class = "has-events">
-                       <%= %>
+                       <%= "R$#{availability.price}" %>
                      </div>
                  <% end %>
              <% end %>
-
             </div>
           </div>
         </div>
