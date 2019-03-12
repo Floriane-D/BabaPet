@@ -29,7 +29,7 @@
             </div>
             <div class="availability-info">
               <h3>My Availabilities</h3>
-              
+
               <%= month_calendar events: @availabilities do |date, availabilities| %>
                 <%= date %>
 
@@ -39,26 +39,29 @@
                   </div>
                 <% end %>
               <% end %>
-              
+
               <% @availabilities.each do |availability| %>
               <br>
                 <p>Available From: <%= availability.start_date %></p>
                 <p>To: <%= availability.end_date %></p>
                 <p>Price Per Day: <%= availability.price %></p>
               <% end %>
-              
+
             </div>
           </div>
         </div>
         <div class="col-xs-12 col-sm-4" id="sticky-box">
           <div class="img-box text-center">
             <%= cl_image_tag(@user.location, :height=>1700, :width=>900, :crop=>"fill", class: "location") %>
-          <div class="text-center">
-            <%= link_to "Add New Availability", new_availability_path, class: "btn btn-primary" %>
-          </div>
-          <div class="text-center">
-            <%= link_to "Back", availabilities_path, class: "btn btn-primary" %>
-          </div>
+            <div class="text-center">
+              <%= link_to "Add a new availability", new_availability_path, class: "btn btn-primary" %>
+            </div>
+            <div class="text-center">
+              <%= link_to "Back", availabilities_path, class: "btn btn-primary" %>
+            </div>
+            <div class="text-center">
+              <%= link_to "Update your profile", edit_user_registration_path, class: "btn btn-primary" %>
+            </div>
           </div>
         </div>
       </div>
