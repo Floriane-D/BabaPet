@@ -12,11 +12,12 @@
         <h2>Find someone to take care of your pet</h2>
         <br>
 
-        <%= simple_form_for(:search, url: availabilities_path, method: :get) do |f| %>
+        <%= simple_form_for(:search, url: search_path, method: :get) do |f| %>
 
           <%= f.input :start_date, input_html: { type: :date } %>
           <%= f.input :end_date, input_html: { type: :date } %>
           <%= f.input :address, id: 'search_address' %>
+          <%= f.input :distance, input_html: { type: :number } %>
 
           <div style="text-align: center">
           <%= f.submit class: 'btn btn-primary', value: "Search" %>
@@ -55,7 +56,8 @@
 
           <%= f.input :start_date, input_html: { type: :date } %>
           <%= f.input :end_date, input_html: { type: :date } %>
-          <%= f.input :address %>
+          <%= f.input :address, id: 'search_address' %>
+          <%= f.input :distance, input_html: { type: :number } %>
 
           <div style="text-align: center">
           <%= f.submit class: 'btn btn-primary', value: "Search" %>
