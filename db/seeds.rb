@@ -8,7 +8,7 @@ require 'faker'
 #   Character.create(name: 'Luke', movie: movies.first)
 
 
-4.times do
+15.times do
   user=User.new(
     email: Faker::Internet.email,
     password: "12345678",
@@ -33,7 +33,7 @@ require 'faker'
   user.save!
 end
 
-20.times do
+100.times do
   availability = Availability.new(
     start_date:    Faker::Date.between(Date.today + 2.days, Date.today+5.days),
     end_date:  Faker::Date.between(Date.today + 5.days, Date.today+60.days),
