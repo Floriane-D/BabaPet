@@ -3,7 +3,7 @@ class PagesController < ApplicationController
   def home
   end
 
-  def index
+  def profile
     @user = current_user
     @availabilities = @user.availabilities
     @bookings = Booking.where(user_id: @user.id)
