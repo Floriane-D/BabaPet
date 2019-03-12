@@ -29,12 +29,24 @@
             </div>
             <div class="availability-info">
               <h3>My Availabilities</h3>
+              
+              <%= month_calendar events: @availabilities do |date, availabilities| %>
+                <%= date %>
+
+                <% availabilities.each do |availability| %>
+                  <div class = "has-events">
+                    <%=""%>
+                  </div>
+                <% end %>
+              <% end %>
+              
               <% @availabilities.each do |availability| %>
               <br>
                 <p>Available From: <%= availability.start_date %></p>
                 <p>To: <%= availability.end_date %></p>
                 <p>Price Per Day: <%= availability.price %></p>
               <% end %>
+              
             </div>
           </div>
         </div>
@@ -53,3 +65,4 @@
     </div>
   </div>
 </div>
+

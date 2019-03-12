@@ -23,7 +23,13 @@
             <div class="availability-info">
               <p>Available From: <%= @availability.start_date %></p>
               <p>To: <%= @availability.end_date %></p>
+
+              <%= month_calendar(attribute: :start_date, end_attribute: :end_date) do |date| %>
+                  <%= date %>
+              <% end %>
+
               <p>Price Per Day: <%= @availability.price %></p>
+
             </div>
           </div>
         </div>
