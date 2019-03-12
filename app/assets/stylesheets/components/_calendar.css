@@ -9,12 +9,14 @@
   .wday-5 {}
   .wday-6 {}
 
+
   .today {
     background-color: #cdf7ca;
   }
   .past {}
   .future {}
   .start-date {}
+
 
   .prev-month {}
   .next-month {}
@@ -26,6 +28,7 @@
 
   }
   .calendar-heading{
+
     color: black;
     text-decoration: none;
   }
@@ -35,6 +38,7 @@
 
   .table-striped{
   font-size: 14px;
+
 
   }
 
