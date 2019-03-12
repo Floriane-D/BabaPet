@@ -6,6 +6,7 @@ Rails.application.routes.draw do
     resources :bookings, only: [:new, :create]
   end
 
-  get '/search/', :to => 'pages#search', :as => :search
+  get '/search/', :to => 'availabilities#search', :as => :search
+  get 'profile', to: 'pages#profile', as: :profile
 
 end
