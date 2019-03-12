@@ -5,6 +5,7 @@ class AvailabilitiesController < ApplicationController
     dates_array = params[:daterange].split(" - ")
     search_start_date = Date.strptime(dates_array[0], '%m/%d/%Y')
     search_end_date = Date.strptime(dates_array[1], '%m/%d/%Y')
+    @search_params = { start_date: search_start_date, end_date: search_end_date }
 
     availabilities_without_location_criteria = Availability.available_between(search_start_date, search_end_date)
 
@@ -67,6 +68,7 @@ class AvailabilitiesController < ApplicationController
     @availability = Availability.find(params[:id])
     @availabilities << @availability
     @user = @availability.user
+    @search_params = params.require(:booking).permit(:start_date, :end_date)
   end
 
   private

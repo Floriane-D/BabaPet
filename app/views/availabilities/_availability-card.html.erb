@@ -5,5 +5,5 @@
     <p><%= "#{availability.user.address.split("-").first} - #{availability.user.address.split("-").second}" %></p>
   </div>
   <div class="availability-card-user-avatar"><%= cl_image_tag availability.user.avatar, gravity: :face %></div>
-  <div class="availability-card-button"><%= link_to "More details", availability_path(availability), class: "btn btn-success btn-sm" %></div>
+  <div class="availability-card-button"><%= link_to "More details", availability_path(availability, booking: @search_params), class: "btn btn-success btn-sm" %></div>
 </div>
