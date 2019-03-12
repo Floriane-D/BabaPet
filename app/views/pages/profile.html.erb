@@ -19,6 +19,14 @@
             </div> -->
             <div class="personal-info">
               <h3>My Bookings</h3>
+              <%= month_calendar events: @bookings, attribute: :start_date, end_attribute: :end_date do |date, bookings| %>
+                <div><%= date %></div>
+                 <% bookings.each do |booking| %>
+                     <div class = "has-events">
+                       <%= %>
+                     </div>
+                 <% end %>
+             <% end %>
               <% @bookings.each do |booking| %>
               <br>
                 <p>Booked With: <%= booking.availability.user.name %></p>
@@ -31,12 +39,12 @@
               <h3>My Availabilities</h3>
 
               <%= month_calendar events: @availabilities, attribute: :start_date, end_attribute: :end_date do |date, availabilities| %>
-             <div><%= date %></div>
-               <% availabilities.each do |availability| %>
-                   <div class = "has-events">
-                     <%= %>
-                   </div>
-               <% end %>
+                <div><%= date %></div>
+                 <% availabilities.each do |availability| %>
+                     <div class = "has-events">
+                       <%= %>
+                     </div>
+                 <% end %>
              <% end %>
 
               <% @availabilities.each do |availability| %>
