@@ -1,1 +1,55 @@
-profile.html.erb
+<div class="container">
+  <div class="show-box">
+    <div class="container-box">
+      <div class="row">
+        <div class="col-xs-12 col-sm-8">
+          <div class="info-box text-center">
+            <div class="name-info">
+              <%= cl_image_tag(@user.avatar, :height=>300, :width=>300, :crop=>"fill", :gravity=>"face", class: "avatar-lg") %>
+              <h2><%= @user.name %></h2>
+            </div>
+<!--             <div class="description-info">
+              <p><strong>More about <%= @user.name %></strong> </p>
+              <p><%= @user.description %></p>
+            </div>
+            <div class="personal-info">
+              <p><i class="fas fa-map-marker-alt"></i> <%= @user.address %></p>
+              <p><i class="fas fa-at"></i>: <%= @user.email %></p>
+              <p id="phone_number"><i class="fas fa-phone"></i>: <%= @user.phone_number %></p>
+            </div> -->
+            <div class="personal-info">
+              <h3>My Bookings</h3>
+              <% @bookings.each do |booking| %>
+              <br>
+                <p>Booked With: <%= booking.availability.user.name %></p>
+                <p>From: <%= booking.start_date %></p>
+                <p>To: <%= booking.end_date %></p>
+                <p>Total Price: <%= booking.price %></p>
+              <% end %>
+            </div>
+            <div class="availability-info">
+              <h3>My Availabilities</h3>
+              <% @availabilities.each do |availability| %>
+              <br>
+                <p>Available From: <%= availability.start_date %></p>
+                <p>To: <%= availability.end_date %></p>
+                <p>Price Per Day: <%= availability.price %></p>
+              <% end %>
+            </div>
+          </div>
+        </div>
+        <div class="col-xs-12 col-sm-4" id="sticky-box">
+          <div class="img-box text-center">
+            <%= cl_image_tag(@user.location, :height=>1700, :width=>900, :crop=>"fill", class: "location") %>
+          <div class="text-center">
+            <%= link_to "Add New Availability", new_availability_path, class: "btn btn-primary" %>
+          </div>
+          <div class="text-center">
+            <%= link_to "Back", availabilities_path, class: "btn btn-primary" %>
+          </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
