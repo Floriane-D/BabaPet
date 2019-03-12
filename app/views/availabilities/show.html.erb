@@ -37,7 +37,10 @@
           <div class="img-box text-center">
             <%= cl_image_tag(@user.location, :height=>1700, :width=>900, :crop=>"fill", class: "location") %>
             <div class="text-center">
-              <%= link_to "Book Now", new_availability_booking_path(@availability), class: "btn btn-primary" %>
+
+              <button id="sweet-alert-demo" class="btn btn-primary">Book now</button>
+              <%= link_to "", availability_bookings_path(@availability, booking: @search_params), method: :post, id: "make-booking", class: "hidden" %>
+
             </div>
             <div class="text-center">
               <%= link_to "Back", availabilities_path, class: "btn btn-primary" %>

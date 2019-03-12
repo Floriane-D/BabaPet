@@ -6,3 +6,18 @@ initMapbox();
 
 import { initAutocomplete } from '../plugins/init_autocomplete';
 initAutocomplete();
+
+import { initSweetalert } from '../plugins/init_sweetalert';
+
+initSweetalert('#sweet-alert-demo', {
+  title: "Congratulations!",
+  text: "Your booking has just been made",
+  icon: "success"
+  }, (value) => {
+    if (value) {
+      const link = document.querySelector('#make-booking');
+      link.click();
+    }
+  }
+);
+
