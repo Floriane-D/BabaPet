@@ -63,7 +63,9 @@ class AvailabilitiesController < ApplicationController
   end
 
   def show
+    @availabilities = []
     @availability = Availability.find(params[:id])
+    @availabilities << @availability
     @user = @availability.user
   end
 

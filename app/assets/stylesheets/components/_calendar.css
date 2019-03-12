@@ -9,31 +9,32 @@
   .wday-5 {}
   .wday-6 {}
 
-  .today {}
+  .today {
+    background-color: #cdf7ca;
+  }
   .past {}
   .future {}
-
   .start-date {}
 
   .prev-month {}
-  .next-month { }
+  .next-month {}
   .current-month {}
 
   .has-events {
-    background-color: green
+    background-color: green;
+    color: white;
 
   }
   .calendar-heading{
-    color: yellow;
-    background-color: yellow
+    color: black;
+    text-decoration: none;
   }
 
   .calendar-title{
-    color : orange;
 }
 
   .table-striped{
-
+  font-size: 14px;
 
   }
 
