@@ -12,7 +12,7 @@
         <h2>Find someone to take care of your pet</h2>
         <br>
 
-        <%= simple_form_for(:search, url: availabilities_path, method: :get) do |f| %>
+        <%= simple_form_for(:search, url: search_path, method: :get) do |f| %>
 
           <label for="daterange">When do you need  Baba?</label>
           <br>
@@ -30,6 +30,7 @@
             <br>
             <br>
           <%= f.input :address, id: 'search_address' %>
+          <%= f.input :distance, input_html: { type: :number } %>
 
           <div style="text-align: center">
           <%= f.submit class: 'btn btn-primary', value: "Search" %>
@@ -62,7 +63,7 @@
 
       <div class="col-xs-12">
         <br>
-        <%= simple_form_for(:search, url: availabilities_path, method: :get) do |f| %>
+        <%= simple_form_for(:search, url: search_path, method: :get) do |f| %>
 
           <label for="daterange">When do you need  Baba?</label>
           <br>
@@ -80,6 +81,7 @@
             <br>
             <br>
           <%= f.input :address, id: 'search_address' %>
+          <%= f.input :distance, input_html: { type: :number } %>
 
           <div style="text-align: center">
           <%= f.submit class: 'btn btn-primary', value: "Search" %>
