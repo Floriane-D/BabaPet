@@ -1,12 +1,12 @@
 class AvailabilitiesController < ApplicationController
   skip_before_action :authenticate_user!, only: [:index, :show]
   def index
-    @availabilities = Availability.all
+    @availabilities = Availability.with_location
     @markers = @availabilities.map do |availability|
       {
         lng: availability.user.longitude,
         lat: availability.user.latitude,
-        infoWindow: render_to_string(partial: "infowindow", locals: { availability: availability })
+        infoWindow: render_to_string(partial: "availability-card", locals: { availability: availability })
       }
     end
   end
