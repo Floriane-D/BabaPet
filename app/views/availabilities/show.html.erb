@@ -29,6 +29,14 @@
               <% end %>
 
               <p>Price Per Day: <%= @availability.price %></p>
+               <%= month_calendar events: @availabilities, attribute: :start_date, end_attribute: :end_date do |date, availabilities| %>
+                div><%= date %></div>
+                 <% availabilities.each do |availability| %>
+                     <div class = "has-events">
+                       <%= %>
+                     </div>
+                 <% end %>
+             <% end %>
 
             </div>
           </div>
